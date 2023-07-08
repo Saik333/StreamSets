@@ -24,10 +24,13 @@ dev_raw_data_source.set_attributes(
 print("adding stage trash")
 trash = pipeline_builder.add_stage('Trash')
 dev_raw_data_source >> trash
+
+#create pipeline
 pipeline = pipeline_builder.build('My first pipeline from SDK_1')
 print("publishing new pipeline")
 sch.publish_pipeline(pipeline, commit_message='First commit of my first pipeline')
 
+#create job
 print("creating job for the pipeline")
 job_builder = sch.get_job_builder()
 pipeline = sch.pipelines.get(name='My first pipeline from SDK')
