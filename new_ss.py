@@ -1,5 +1,9 @@
 import logging
 from streamsets.sdk import ControlHub
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 logging.basicConfig(
     level=logging.INFO,
     format="[%(asctime)s] [%(levelname)s] [%(message)s]",
@@ -38,7 +42,7 @@ snowflake=pipeline_builder.add_stage('Snowflake',type='destination')
 snowflake.set_attributes(
     include_organization=False,
     snowflake_region='OTHER',
-    custom_snowflake_region="central-india.azure",
+    custom_snowflake_region=os.getenv('snowflake_region'),
     account="dk89728",
     user="saikumar",
     password="Sai@12345",
