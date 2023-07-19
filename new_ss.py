@@ -26,6 +26,13 @@ jdbc_query.set_attributes(
     password="India@1290",
 )
 
+expression_evaluator=pipeline_builder.add_stage('Expression Evaluator', type='processor')
+
+expression_evaluator.set_attributes(
+    field_expressions=[
+        {"fieldToSet":"/load_time","expression":"${time:now()}"}]
+)
+
 snowflake=pipeline_builder.add_stage('Snowflake',type='destination')
 # print(dir(snowflake))
 snowflake.set_attributes(
@@ -54,7 +61,7 @@ pipeline_finisher.set_attributes(
 
 # print(dir(pipeline_finisher))
 
-jdbc_query >> snowflake
+jdbc_query >> expression_evaluator >> snowflake
 jdbc_query >= pipeline_finisher
 
 pipeline=pipeline_builder.build('test_pipeline_11')
