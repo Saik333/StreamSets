@@ -7,7 +7,7 @@ logging.basicConfig(
 )
 logging.info('starting the process')
 try:
-    sch = ControlHub(credential_id='24a3ec99-5d86-4745-a607-e987835deae7', token='eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJzIjoiOTBjYjY5YWFjODI5NjVjMGMyYjFkYWJkOTFhMjJjMjY1N2M4NDYwNDFmYmFmODNmMzU4M2UwYTI1MDI2M2VlYTVjNWY2Mzc4NWY2N2ExZTY1NjIwYzkyNTk3YjNhOWUwOTYxZThjY2M0ZTVmYTY1ZWYyZTNlNzdhN2RjNzM3YmEiLCJ2IjoxLCJpc3MiOiJldTAxIiwianRpIjoiMjRhM2VjOTktNWQ4Ni00NzQ1LWE2MDctZTk4NzgzNWRlYWU3IiwibyI6ImRjZTVhZjZiLWUzMGUtMTFlYy05NWU3LTNkZjAzODVlMDViZiJ9.')
+    sch = ControlHub(credential_id='2c7125b1-9bfb-4d46-8674-ec74b5da10ee', token='eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJzIjoiYWQxYWQwZDY3ZGQ0NzE2ODU4YjdkZTYyMzQ5MTRiYWIzZTYzMjBhOTkwOTVlYTQ4ZTQ3ZTI5MWIxNjlhMjBlOWVkNWE3MjA4MTJhMDg1MDQwMGUxN2MyNDYxOGVkMTA3MjJmOWYxNDI4MjE2ZjFjODQ2YzhlZDA3OGE3NGRmZWIiLCJ2IjoxLCJpc3MiOiJldTAxIiwianRpIjoiMmM3MTI1YjEtOWJmYi00ZDQ2LTg2NzQtZWM3NGI1ZGExMGVlIiwibyI6ImRjZTVhZjZiLWUzMGUtMTFlYy05NWU3LTNkZjAzODVlMDViZiJ9.')
     logging.info("Connection to controlHub is Successful")
 except Exception as e:
     logging.info("Connection failed")
